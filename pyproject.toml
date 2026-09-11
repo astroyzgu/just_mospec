@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = 'setuptools.build_meta'
+
+[project]
+name = "justmospec"
+dynamic = ["version"]
+authors = [ { name = "Gu Yizhou" } ]
+license = "BSD-3-Clause"
+license-files = ["LICENSE"]
+readme = "README.md"
+description = "Spectroscopic Reduction Pipeline for JUST-MOS."
+requires-python = ">=3.10"
+dependencies = ["numpy", "scipy", "astropy"]
+keywords = ["JUST", "MOS", "spectroscopy"]
+classifiers = [ "Development Status :: 3 - Alpha",
+                "Environment :: Console",
+                "Intended Audience :: Science/Research",
+                "Operating System :: OS Independent",
+                "Programming Language :: Python :: 3",
+                "Topic :: Scientific/Engineering :: Astronomy" ]
+
+[project.optional-dependencies]
+test = ["pytest"]
+coverage = ["pytest-cov", "coveralls"]
+doc = ["Sphinx", "sphinx-rtd-theme"]
+specsimu = ["desisim"]
+
+[project.urls]
+Repository = "https://github.com/astroyzgu/justmospec"
+Issues = "https://github.com/astroyzgu/justmospec/issues"
+
+[tool.setuptools]
+package-dir = {"" = "py"}
+
+[tool.setuptools.packages.find]
+where = ["py"]
+exclude = [".github/*"]
+
+[tool.setuptools.dynamic]
+version = {attr = "justmospec.__version__"}
+
+[tool.coverage.run]
+relative_files = true
+source = ["py/justmospec"]
+omit = ["py/justmospec/_version.py",
+        "py/justmospec/conftest*",
+        "py/justmospec/test/*",
+        "*/justmospec/_version.py",
+        "*/justmospec/conftest*",
+        "*/justmospec/test/*"]
+
+[tool.coverage.report]
+exclude_lines = [
+                "pragma: no cover",
+                "except ImportError",
+                "raise AssertionError",
+                "raise NotImplementedError",
+                "def main\\(.*\\):",
+                "pragma: py{ignore_python_version}",
+                "def _ipython_key_completions_",
+                ]
