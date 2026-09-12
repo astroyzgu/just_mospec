@@ -1,23 +1,37 @@
 # justmospec
-Spectroscopic Reduction Pipeline for JUST-MOS.
+Spectroscopic Reduction Pipeline for JUST-MOS. This pipeline is designed to from raw data to redshift,  including:  
+- generating mock 1d spectra, 
+- generating mock 2d raw spectra,  
+- reducing 2d raw spectra to 1d spectra, 
+- fitting 1d spectra to get spectroscopic redshifts
+- ... 
 
 ## Install
 
-```bash
-pip install -e .
-```
-
-Spectrum generation needs DESI templates. Install the [desihub](https://github.com/desihub) packages first (they are not on PyPI):
+Spectrum generation (`SpectrumMaker`) and redshift fitting need packages from
+[desihub](https://github.com/desihub). 
 
 ```bash
-bash install_desihub.sh
+pip install --no-build-isolation git+https://github.com/desihub/desiutil.git
+pip install --no-build-isolation git+https://github.com/desihub/desimodel.git
+install_desimodel_data  # install required desimodel data 
+pip install --no-build-isolation git+https://github.com/desihub/desitarget.git
+pip install --no-build-isolation git+https://github.com/desihub/desispec.git
+pip install --no-build-isolation git+https://github.com/desihub/desisim.git
+pip install --no-build-isolation git+https://github.com/desihub/redrock.git
+git clone https://github.com/desihub/redrock-templates
 pip install -e ".[specsimu]"
 ```
 
-The script picks Python 3.12 and writes `desihub-env.sh` with `DESIMODEL`, `DESI_BASIS_TEMPLATES`, and `RR_TEMPLATE_DIR`. Source it before calling `SpectrumMaker`:
+- `desisim` (and its desihub dependencies above) is required by `SpectrumMaker`
+- `redrock` and `redrock-templates` are required to fit spectroscopic redshifts
+
+Set these environment variables before running `SpectrumMaker` or `rrdesi`:
 
 ```bash
-source desihub-env.sh
+export DESIMODEL=/path/to/desimodel          # directory that contains desimodel data/
+export DESI_BASIS_TEMPLATES=/path/to/v3.1    # directory that contains DESI basis-templates
+export RR_TEMPLATE_DIR=/path/to/redrock-templates # directory that contains redrock-templates 
 ```
 
 ## Usage
