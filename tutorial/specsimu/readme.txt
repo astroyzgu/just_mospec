@@ -20,6 +20,3 @@ curl -L -o data/recombination_lines.ecsv \
 mkdir -p DESI_templates
 curl -L -o DESI_templates/bgs_templates_v2.3.fits \
   https://data.desi.lbl.gov/public/dr1/spectro/templates/basis_templates/v3.2/bgs_templates_v2.3.fits
-
-# On this cluster you can instead symlink the local copy:
-# ln -s /home/Survey/JUST/external/desidata_for_testing_pipeline/desi_spectro_basis/basis_templates/v3.1 DESI_templates
