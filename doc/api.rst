@@ -1,10 +1,10 @@
-==============
-justmospec API
-==============
+===============
+just_mospec API
+===============
 
-.. automodule:: justmospec
+.. automodule:: just_mospec
     :members:
 
-.. automodule:: justmospec.simulator
+.. automodule:: just_mospec.simulator
     :members:
     :imported-members:

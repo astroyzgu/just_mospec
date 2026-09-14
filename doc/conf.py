@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# justmospec documentation build configuration file
+# just_mospec documentation build configuration file
 
 import sys
 import os
@@ -30,7 +30,7 @@ intersphinx_mapping = {
 templates_path = ['_templates']
 source_suffix = '.rst'
 master_doc = 'index'
-project = u'justmospec'
+project = u'just_mospec'
 copyright = u'2026, Gu Yizhou'
 
 __import__(project)
@@ -54,4 +54,4 @@ for missing in ('numpy', 'scipy', 'astropy', 'desisim'):
 
 html_theme = 'sphinx_rtd_theme'
 html_last_updated_fmt = '%b %d, %Y'
-htmlhelp_basename = 'justmospecdoc'
+htmlhelp_basename = 'just_mospecdoc'

@@ -1,6 +1,6 @@
 # Licensed under a 3-clause BSD style license - see LICENSE
 # -*- coding: utf-8 -*-
-"""Test top-level justmospec functions
+"""Test top-level just_mospec functions
 """
 import unittest
 import re
@@ -8,7 +8,7 @@ from .. import __version__ as theVersion
 
 
 class TestTopLevel(unittest.TestCase):
-    """Test top-level justmospec functions
+    """Test top-level just_mospec functions
     """
 
     @classmethod

@@ -3,11 +3,9 @@
 """Spectrum helper: match (Mr, g-r), then redshift the nearest template."""
 
 import os
-
 import numpy as np
 from astropy.io import fits
 from scipy.spatial import cKDTree
-
 
 def save_spectra(outdir, wave, flux, meta, objmeta):
     """Write spectra + metadata into ``outdir``.

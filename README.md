@@ -1,4 +1,4 @@
-# justmospec
+# just_mospec
 Spectroscopic Reduction Pipeline for JUST-MOS. This pipeline is designed to from raw data to redshift,  including:  
 - generating mock 1d spectra, 
 - generating mock 2d raw spectra,  
@@ -8,22 +8,20 @@ Spectroscopic Reduction Pipeline for JUST-MOS. This pipeline is designed to from
 
 ## Install
 
-Spectrum generation (`SpectrumMaker`) and redshift fitting need packages from
-[desihub](https://github.com/desihub). 
+Spectrum generation (`SpectrumMaker`) needs
+[just_etc](https://github.com/RainW7/just_etc) and
+[just_specsim](https://github.com/nye17/just_specsim).
+Redshift fitting needs packages from [desihub](https://github.com/desihub).
 
 ```bash
-pip install --no-build-isolation git+https://github.com/desihub/desiutil.git
-pip install --no-build-isolation git+https://github.com/desihub/desimodel.git
-install_desimodel_data  # install required desimodel data 
-pip install --no-build-isolation git+https://github.com/desihub/desitarget.git
-pip install --no-build-isolation git+https://github.com/desihub/desispec.git
-pip install --no-build-isolation git+https://github.com/desihub/desisim.git
+pip install git+https://github.com/RainW7/just_etc.git
+pip install git+https://github.com/nye17/just_specsim.git
 pip install --no-build-isolation git+https://github.com/desihub/redrock.git
 git clone https://github.com/desihub/redrock-templates
 pip install -e ".[specsimu]"
 ```
 
-- `desisim` (and its desihub dependencies above) is required by `SpectrumMaker`
+- `just_etc` and `just_specsim` are required by `SpectrumMaker`
 - `redrock` and `redrock-templates` are required to fit spectroscopic redshifts
 
 Set these environment variables before running `SpectrumMaker` or `rrdesi`:
@@ -37,7 +35,7 @@ export RR_TEMPLATE_DIR=/path/to/redrock-templates # directory that contains redr
 ## Usage
 
 ```python
-from justmospec.simulator import SpectrumMaker
+from just_mospec.simulator import SpectrumMaker
 
 maker = SpectrumMaker()
 wave, flux, meta, objmeta = maker(z=0.1, Mr=-21.0, color=0.7, saveto='./mockspectra/')

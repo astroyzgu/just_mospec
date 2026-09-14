@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 ==========
-justmospec
+just_mospec
 ==========
 
 Spectroscopic Reduction Pipeline for JUST-MOS.

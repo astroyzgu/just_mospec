@@ -1,6 +1,6 @@
 # Licensed under a 3-clause BSD style license - see LICENSE
 # -*- coding: utf-8 -*-
-"""Test justmospec.simulator
+"""Test just_mospec.simulator
 """
 import os
 import tempfile

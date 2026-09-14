@@ -1,5 +1,5 @@
 ======================================
-Welcome to justmospec's documentation!
+Welcome to just_mospec's documentation!
 ======================================
 
 Introduction

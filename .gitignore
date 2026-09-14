@@ -6,7 +6,7 @@ __pycache__
 htmlcov
 .coverage
 .pytest_cache
-py/justmospec/.cache
+py/just_mospec/.cache
 tutorial/**/mockspectra/
 notebok/
 

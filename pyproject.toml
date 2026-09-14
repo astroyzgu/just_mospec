@@ -3,7 +3,7 @@ requires = ["setuptools"]
 build-backend = 'setuptools.build_meta'
 
 [project]
-name = "justmospec"
+name = "just_mospec"
 dynamic = ["version"]
 authors = [ { name = "Gu Yizhou" } ]
 license = "BSD-3-Clause"
@@ -27,8 +27,8 @@ doc = ["Sphinx", "sphinx-rtd-theme"]
 specsimu = ["desisim"]
 
 [project.urls]
-Repository = "https://github.com/astroyzgu/justmospec"
-Issues = "https://github.com/astroyzgu/justmospec/issues"
+Repository = "https://github.com/astroyzgu/just_mospec"
+Issues = "https://github.com/astroyzgu/just_mospec/issues"
 
 [tool.setuptools]
 package-dir = {"" = "py"}
@@ -38,17 +38,17 @@ where = ["py"]
 exclude = [".github/*"]
 
 [tool.setuptools.dynamic]
-version = {attr = "justmospec.__version__"}
+version = {attr = "just_mospec.__version__"}
 
 [tool.coverage.run]
 relative_files = true
-source = ["py/justmospec"]
-omit = ["py/justmospec/_version.py",
-        "py/justmospec/conftest*",
-        "py/justmospec/test/*",
-        "*/justmospec/_version.py",
-        "*/justmospec/conftest*",
-        "*/justmospec/test/*"]
+source = ["py/just_mospec"]
+omit = ["py/just_mospec/_version.py",
+        "py/just_mospec/conftest*",
+        "py/just_mospec/test/*",
+        "*/just_mospec/_version.py",
+        "*/just_mospec/conftest*",
+        "*/just_mospec/test/*"]
 
 [tool.coverage.report]
 exclude_lines = [

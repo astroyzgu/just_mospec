@@ -6,4 +6,4 @@ Change Log
 ------------------
 
 * Package scaffold based on desitemplate.
-* Add :class:`justmospec.simulator.SpectrumMaker`.
+* Add :class:`just_mospec.simulator.SpectrumMaker`.
