@@ -31,12 +31,3 @@ export DESIMODEL=/path/to/desimodel          # directory that contains desimodel
 export DESI_BASIS_TEMPLATES=/path/to/v3.1    # directory that contains DESI basis-templates
 export RR_TEMPLATE_DIR=/path/to/redrock-templates # directory that contains redrock-templates 
 ```
-
-## Usage
-
-```python
-from just_mospec.simulator import SpectrumMaker
-
-maker = SpectrumMaker()
-wave, flux, meta, objmeta = maker(z=0.1, Mr=-21.0, color=0.7, saveto='./mockspectra/')
-```
